@@ -1,0 +1,121 @@
+{
+  "development": {
+    "rows": 1605,
+    "isolate_groups": 43,
+    "include_no_drug_controls": true,
+    "report_subsets": [
+      "all",
+      "drug_exposed",
+      "no_drug_control"
+    ]
+  },
+  "outer_cv": {
+    "splitter": "StratifiedGroupKFold",
+    "n_splits": 5,
+    "shuffle": true,
+    "seed": 42,
+    "group_column": "group_id"
+  },
+  "ensemble": {
+    "member_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "aggregation": "arithmetic_mean_of_member_scores",
+    "bagging_fraction": 1.0
+  },
+  "early_stopping": {
+    "group_splitter": "StratifiedGroupKFold",
+    "n_splits": 7,
+    "selection": "first split with both classes in optimizer and stopping partitions",
+    "metric": "roc_auc",
+    "patience": 25,
+    "minimum_improvement": 1e-05,
+    "preprocessing_fit_scope": "optimizer_training_rows_only"
+  },
+  "model": {
+    "family": "multitower_attention_ensemble",
+    "encoder_out_dim": 16,
+    "encoder_dropout": 0.1,
+    "hidden_channels": 16,
+    "kernel_size": 3,
+    "curve_conv_depth": 2,
+    "curve_batch_norm": false,
+    "curve_use_diff_channel": false,
+    "fusion": "attention",
+    "attention_heads": 2,
+    "head_hidden_dim": 64,
+    "head_dropout": 0.2
+  },
+  "training": {
+    "epochs": 150,
+    "batch_size": 64,
+    "lr": 0.002,
+    "weight_decay": 0.0001,
+    "use_class_weight": true,
+    "use_weighted_sampler": false,
+    "mixup_alpha": 0.0,
+    "curve_noise_std": 0.0,
+    "lr_schedule": "none",
+    "grad_clip_norm": 5.0,
+    "device": "cpu",
+    "torch_threads": 2
+  },
+  "environment": {
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "sklearn": "1.9.1",
+    "torch": "2.14.1",
+    "python": "3.12.11"
+  },
+  "protocol_id": "ast-demonstration-1.0",
+  "label_definition": "retained binary endpoint-growth labels from the source; not re-assessed",
+  "label_version": "demo-retained-labels",
+  "representation": "centered",
+  "time_minutes_after_addition": [
+    30,
+    45,
+    60,
+    75,
+    90,
+    105,
+    120,
+    135
+  ],
+  "threshold": {
+    "value": 0.5,
+    "selection": "fixed demonstration setting inherited from a previously examined source workflow; not independently validated"
+  },
+  "split_source": "retained row roles with replaced group identifiers; no re-splitting",
+  "data_status": "pseudonymized and numerically perturbed demonstration data",
+  "evaluation": {
+    "rows": 144,
+    "samples": 8,
+    "participant_groups": 6,
+    "concentrations_ug_ml": [
+      0,
+      0.5,
+      1,
+      2,
+      4,
+      8
+    ],
+    "status": "transformed demonstration subset; not untouched clinical validation"
+  },
+  "transformations": {
+    "names": "drugs, species, isolate/specimen/participant groups and row identifiers replaced consistently",
+    "measurements": "continuous paired-channel readings numerically perturbed; transformation rules and source comparisons are not distributed",
+    "preserved": "binary labels, categorical indicators, row order, grouped roles, missingness, elapsed times, dilution concentrations and discrete comparison MIC values",
+    "reference_values": "retained discrete endpoint comparators for exercising the software; not newly measured or independent validation evidence",
+    "limitations": "not original raw measurements, not a paper reproduction dataset, not independently generated synthetic data; no anonymity guarantee"
+  },
+  "saved_predictions": {
+    "arms": [
+      "full"
+    ],
+    "source": "fresh training on the bundled transformed inputs; other historical arms removed"
+  }
+}

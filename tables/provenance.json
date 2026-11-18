@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "mode": "saved",
+  "data_status": "pseudonymized and numerically perturbed demonstration data",
+  "score_source": "bundled full-model demonstration scores",
+  "input_sha256": {
+    "development.tsv": "5909bf69847649c561a962b136dfa9a12bf5b0719c9bada07fa5d6215144d6fb",
+    "evaluation.tsv": "ee364fb67dd2547acd24809a50c2647903c8041749a3e09408833cb596268f7c",
+    "prediction_provenance.json": "d4aed59b46e0e34888c4cee6de35c27bef87adfd87feea7a01333cfd093629ac",
+    "protocol.json": "ac10de3ee1d396835299174ba40ec12db912ba317df2cf8b6d78eb250696a98c",
+    "scores.tsv": "1ceca2ce5c757b19d051bad6aa57f9b8ab4c807d054fab40b06e57b9502e1f09",
+    "series.tsv": "6a4b5c5cbb12187d65f74db88ab2cf344460466296c4359323d0842b94c394f5",
+    "series_wells.tsv": "e043e367a24cbe28a9de7aaeefa801a54eefeb2a1ab4c09ae5641acb096f0b4a",
+    "split_manifest.tsv": "0bdcace2961e2e7261f06aeb4829db2efabe8753003c0241f95c5de43f46a833",
+    "wells.tsv": "826715029596108e592a0cc1472ff0336f7c36c48bdf9abc37f7549ee65afc82"
+  },
+  "interpretation": "software demonstration; not clinical performance or paper reproduction"
+}

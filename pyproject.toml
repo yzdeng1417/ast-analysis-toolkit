@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ast-analysis-toolkit"
+version = "1.0"
+description = "Antimicrobial susceptibility analysis tools with pseudonymized and numerically perturbed demonstration data"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT AND CC-BY-4.0"
+license-files = ["LICENSE", "DATA-USE.md", "licenses/*.txt"]
+dependencies = ["numpy>=1.26,<3", "pandas>=2.2,<4", "scikit-learn>=1.4,<2", "PyYAML>=6,<7"]
+
+[project.urls]
+Repository = "https://github.com/yzdeng1417/ast-analysis-toolkit"
+Releases = "https://github.com/yzdeng1417/ast-analysis-toolkit/releases"
+
+[project.scripts]
+ast-reproduce = "cmp.reproduce:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+cmp = ["feature_schema.yaml", "data/demo/*.tsv", "data/demo/*.json", "data/demo/*.md"]

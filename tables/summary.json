@@ -1,0 +1,20 @@
+[
+  {
+    "cohort": "development",
+    "arm": "full",
+    "series": 228,
+    "reportable": 228,
+    "evaluated": 228,
+    "exact": 146,
+    "essential_agreement": 198
+  },
+  {
+    "cohort": "evaluation",
+    "arm": "full",
+    "series": 8,
+    "reportable": 4,
+    "evaluated": 4,
+    "exact": 3,
+    "essential_agreement": 4
+  }
+]
