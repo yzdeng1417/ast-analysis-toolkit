@@ -1,18 +1,18 @@
 # Demonstration inputs
 
-**Pseudonymized and numerically perturbed demonstration data.** These are adapted source records, not original measurements or independently generated synthetic data. They do not support paper reproduction, clinical claims or an anonymity guarantee. See [data terms](../../../../DATA-USE.md).
+These files contain the toolkit’s demonstration data. See the [data license](../../../../DATA-USE.md).
 
 | File | Meaning |
 | --- | --- |
-| `development.tsv`, `evaluation.tsv` | Paired time-series inputs, example categorical features and retained binary endpoint-growth labels |
+| `development.tsv`, `evaluation.tsv` | Paired time-series measurements, categorical features and binary growth labels |
 | `wells.tsv` | Example identifiers, per-cohort matrix row positions, categories and dilution concentrations |
-| `split_manifest.tsv` | Retained grouped optimizer, early-stop and validation roles |
-| `series.tsv` | Example group/drug contexts and retained discrete comparator values |
+| `split_manifest.tsv` | Training, early-stopping and validation assignments by group |
+| `series.tsv` | Group and drug identifiers with comparison endpoints for each concentration series |
 | `series_wells.tsv` | Membership links, including shared control wells |
-| `scores.tsv` | Fresh full-model ensemble predictions on these transformed inputs |
-| `protocol.json` | Model settings and interpretation boundaries |
+| `scores.tsv` | Growth predictions from the full-model ensemble |
+| `protocol.json` | Model settings, data splits and classification threshold |
 | `prediction_provenance.json` | Training-input and score checksums for the distributed predictions |
 
-`Example_Drug_A` means 示例药 A. `Example_Species_A` means 示例菌种 A. `Example_Strain_A` and `Example_Specimen_A` distinguish an isolate group from a specimen group. The letters have no clinical meaning and no public reverse mapping. Combination contexts retain component membership with `+`.
+`Example_Strain_A` identifies an isolate group and `Example_Specimen_A` identifies a specimen group. Combination drugs join their component codes with `+`.
 
-`growth` is a retained source endpoint label, not a label inferred from the perturbed early readings. Concentrations and comparison endpoints are discrete dilution values and were not numerically perturbed. Missing comparator values remain missing. The evaluation subset has been examined previously; it is a demonstration subset, not untouched validation.
+The `growth` column records the binary endpoint label. Concentrations and comparison endpoints use discrete dilution values. A blank comparator means that no reference value is available.

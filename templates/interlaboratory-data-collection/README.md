@@ -1,17 +1,17 @@
 # Interlaboratory data collection template
 
-**Version:** 1.0
+Version 1.0
 
 [Download the blank workbook](collection_template.xlsx).
 
-This template organizes experimental conditions, paired glucose–turbidity measurements and independently measured reference results for future data collection across laboratories. The three data worksheets contain column headers and empty entry rows. Worksheet names and in-workbook instructions are in Chinese; data field names are in English.
+Use the template to record experimental conditions, paired glucose and turbidity measurements, and independent reference results. The three data sheets have column headers and blank entry rows.
 
 | Worksheet | Purpose | One row represents |
 | --- | --- | --- |
-| 填写说明 (Instructions) | Definitions, units and entry conventions | One instruction |
-| 实验条件 (Experimental conditions) | Specimen, drug, concentration, replicate and assay settings | One specimen–drug–concentration–technical-replicate trajectory |
-| 逐孔时序 (Per-well time series) | Paired GLU and turbidity readings, actual elapsed time and measurement metadata | One paired measurement at one time point |
-| 参考结果 (Reference results) | Independent MIC or growth-reference results and their provenance | One reference result |
+| Instructions | Definitions, units and entry conventions | One instruction |
+| Experimental conditions | Specimen, drug, concentration, replicate and assay settings | One technical replicate for a specimen, drug and concentration |
+| Per-well time series | Paired glucose and turbidity readings with elapsed time and measurement details | One paired measurement at one time point |
+| Reference results | Independent MIC or growth-reference results and their source | One reference result |
 
 ## Recording and linking measurements
 
@@ -24,18 +24,14 @@ This template organizes experimental conditions, paired glucose–turbidity meas
 - Leave missing values blank and record a `missing_reason`; reserve zero for a measured zero. Retain controls, exclusion reasons and source-file identifiers.
 - Copy the blank entry rows as needed and retain a copy of the template version used.
 
-The blank workbook records new experiments and contains no example drug names, organism names, specimen records or measured values. The command-line workflow uses separate pseudonymized and numerically perturbed demonstration data. Its fields and demonstration settings are documented in the [feature schema](../../src/cmp/feature_schema.yaml) and the [analysis protocol](../../src/cmp/data/demo/protocol.json). Names entered in this blank template are not automatically transformed by the software.
-
-## 中文说明
-
-此空白模板用于后续跨实验室数据采集，包含填写说明、实验条件、逐孔 GLU–NTU 时序和独立参考结果四张工作表。模板采用去标识化的样本编号，临床身份映射由各中心在受控记录中保存。实验条件与逐孔时序通过实验及轨迹标识关联，独立参考结果通过参考标识关联。各项单位、缺失值和参考结果的填写规则见工作簿“填写说明”。
+The command-line workflow uses its own [demonstration data](../../src/cmp/data/demo/).
 
 ## Version integrity
 
-SHA-256 of the version 1.0 workbook:
+Verify the workbook with its SHA-256 checksum.
 
 ```text
-c84bfdc2a9ded3c31866a2421b9d2b3ab6e2a419aa4d725817f7b89753674473
+29f2eb5538a582e8680433c37dc086e9733c35883018b7fb7590980b1198162b
 ```
 
 This template is licensed under the [MIT License](../../LICENSE).

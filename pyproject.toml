@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ast-analysis-toolkit"
 version = "1.0"
-description = "Antimicrobial susceptibility analysis tools with pseudonymized and numerically perturbed demonstration data"
+description = "Antimicrobial susceptibility analysis tools with demonstration data"
 readme = "README.md"
 requires-python = ">=3.12"
 license = "MIT AND CC-BY-4.0"

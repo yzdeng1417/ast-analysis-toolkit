@@ -98,10 +98,10 @@ def run(output, mode):
               for p in sorted(DATA.iterdir()) if p.suffix in {".tsv", ".json"}
               and (mode == "saved" or p.name != "scores.tsv")}
     provenance = {"version": "1.0", "mode": mode,
-                  "data_status": "pseudonymized and numerically perturbed demonstration data",
+                  "data_status": "demonstration data",
                   "score_source": "fresh full-model training" if mode == "train" else "bundled full-model demonstration scores",
                   "input_sha256": inputs,
-                  "interpretation": "software demonstration; not clinical performance or paper reproduction"}
+                  "interpretation": "example results for the demonstration data"}
     (output / "provenance.json").write_text(json.dumps(provenance, indent=2) + "\n")
     return [record for record in summary if record["arm"] == "full"]
 

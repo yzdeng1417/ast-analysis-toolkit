@@ -1,4 +1,4 @@
-"""Grouped model training for the transformed demonstration inputs."""
+"""Grouped model training for the demonstration data."""
 from __future__ import annotations
 import copy
 from dataclasses import asdict

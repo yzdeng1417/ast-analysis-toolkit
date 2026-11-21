@@ -72,7 +72,7 @@
     "python": "3.12.11"
   },
   "protocol_id": "ast-demonstration-1.0",
-  "label_definition": "retained binary endpoint-growth labels from the source; not re-assessed",
+  "label_definition": "binary endpoint growth label",
   "label_version": "demo-retained-labels",
   "representation": "centered",
   "time_minutes_after_addition": [
@@ -87,10 +87,10 @@
   ],
   "threshold": {
     "value": 0.5,
-    "selection": "fixed demonstration setting inherited from a previously examined source workflow; not independently validated"
+    "selection": "fixed for the demonstration"
   },
-  "split_source": "retained row roles with replaced group identifiers; no re-splitting",
-  "data_status": "pseudonymized and numerically perturbed demonstration data",
+  "split_source": "group assignments in split_manifest.tsv",
+  "data_status": "demonstration data",
   "evaluation": {
     "rows": 144,
     "samples": 8,
@@ -103,19 +103,12 @@
       4,
       8
     ],
-    "status": "transformed demonstration subset; not untouched clinical validation"
-  },
-  "transformations": {
-    "names": "drugs, species, isolate/specimen/participant groups and row identifiers replaced consistently",
-    "measurements": "continuous paired-channel readings numerically perturbed; transformation rules and source comparisons are not distributed",
-    "preserved": "binary labels, categorical indicators, row order, grouped roles, missingness, elapsed times, dilution concentrations and discrete comparison MIC values",
-    "reference_values": "retained discrete endpoint comparators for exercising the software; not newly measured or independent validation evidence",
-    "limitations": "not original raw measurements, not a paper reproduction dataset, not independently generated synthetic data; no anonymity guarantee"
+    "status": "previously examined demonstration subset"
   },
   "saved_predictions": {
     "arms": [
       "full"
     ],
-    "source": "fresh training on the bundled transformed inputs; other historical arms removed"
+    "source": "full-model training on the demonstration data"
   }
 }
